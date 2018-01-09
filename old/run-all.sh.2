@@ -1,0 +1,16 @@
+#!/bin/bash
+
+DB="run-mysql.sh"
+ZBX="run-zabbix-server.sh"
+WEB="run-nginx.sh"
+AGT="run-zabbix-agent.sh"
+
+for i in $DB $ZBX $WEB $AGT
+do
+
+sh $i
+sleep 1
+
+done
+
+docker ps
